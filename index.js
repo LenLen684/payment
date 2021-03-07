@@ -34,6 +34,9 @@ app.use((req, res, next) => {
 
 app.get('/api', routes.api);
 
+app.get('/', routes.index);
+app.get('/pay', routes.payment);
+app.get('/shop', routes.groceries);
 
 app.listen(port, hostname, () =>{
     console.log(`payment running at http://${hostname}:${port}`);

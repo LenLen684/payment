@@ -1,0 +1,8 @@
+{
+    "menu": [
+        {"title": "Home", "link": "/", "icon":"/home.png"},
+        {"title": "Payment Record", "link": "/pay", "icon" : "/pay.png"},
+        {"title":"Grocery List", "link": "/shop", "icon" : "/shop.png"},
+        {"title":"", "link": "/login", "icon" : "/login.png"}
+    ]
+}

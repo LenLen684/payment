@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    background-color:  	#435274;
+    color: #d8ebf6;
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+#sitename{
+    font-family: "Comfortaa", sans-serif;
+    font-size: 200pt;
+    background: linear-gradient(#76F2ED, #83C5F7);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    overflow: hidden;
+}
+.tabs{
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    text-decoration: none;
+}

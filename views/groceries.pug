@@ -1,0 +1,18 @@
+extends layout  
+
+block content
+    table
+        thead
+            tr
+                th Username
+                th Item
+                th Amount
+                th Location
+        tbody
+            each user in data
+                each item in user.groceries
+                    tr
+                        th #{user.username}
+                        th #{item.item}
+                        th #{item.amount}
+                        th #{item.location}

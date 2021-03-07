@@ -1,0 +1,16 @@
+extends layout  
+
+block content
+    table
+        thead
+            tr
+                th Username
+                th Amount Paid
+                th Date (mm/dd/yyyy)
+        tbody
+            each user in data
+                each item in user.payments
+                    tr
+                        th #{user.username}
+                        th #{item.amount}
+                        th #{item.date.month+"/"+item.date.day+"/"+item.date.year}
