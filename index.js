@@ -36,7 +36,14 @@ app.get('/api', routes.api);
 
 app.get('/', routes.index);
 app.get('/pay', routes.payment);
+app.get('/pay/add', routes.payForm);
 app.get('/shop', routes.groceries);
+app.get('/shop/add', routes.groceryForm);
+app.get('/login', routes.loginForm);
+
+app.post('/',urlEncodedParser, routes.loggedin)
+app.post('/pay',urlEncodedParser, routes.addPayment)
+app.post('/shop',urlEncodedParser,routes.addGroceries)
 
 app.listen(port, hostname, () =>{
     console.log(`payment running at http://${hostname}:${port}`);

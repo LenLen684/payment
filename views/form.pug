@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1= header
+    form(method="post" action=action)
+        each item in data
+            label= item.label
+            input(type=item.type name=item.name value=item.value)
+            br
+    if(data2)
+        h1= header2
+        form(method="post" action=action)
+            each item in data2
+                label= item.label
+                input(type=item.type name=item.name value=item.value)
+                br

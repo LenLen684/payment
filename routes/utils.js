@@ -32,10 +32,10 @@ const checkUsername = username => {
     for(datum of data) {
         if (username === datum.username) {
             // if username already exists, return undefined
-            return undefined;
+            return true;
         }
     }
-    return username;
+    return false;
 }
 
 
@@ -82,6 +82,21 @@ const writeAllData = data => {
     fs.writeFileSync(DB,JSON.stringify(data, null, 4),{encoding:'utf-8'});
 }
 
+const createUser = (username, password, household) =>{
+    user = {
+        "username": username,
+        "password": encryptPassword(password),
+        "groceries": [],
+        "payments": [],
+        "public": true,
+        "household": [
+            username,
+            household
+        ]
+    }
+    addUser(user);
+}
+
 //export helper functions
 module.exports = {
     getAllData,
@@ -93,4 +108,5 @@ module.exports = {
     addUser,
     editUserData,
     writeAllData,
+    createUser
 }

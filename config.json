@@ -3,6 +3,30 @@
         {"title": "Home", "link": "/", "icon":"/home.png"},
         {"title": "Payment Record", "link": "/pay", "icon" : "/pay.png"},
         {"title":"Grocery List", "link": "/shop", "icon" : "/shop.png"},
-        {"title":"", "link": "/login", "icon" : "/login.png"}
+        {"title":"Login or sign up", "link": "/login", "icon" : "/login.png"}
+    ],
+    "login":[
+        {"name":"username", "label": "Username", "type": "text", "value": ""},
+        {"name":"password", "label": "Password", "type": "text", "value": ""},
+        {"name":"submit", "label": "", "type": "submit", "value": "Login"}
+    ],
+    "signup":[
+        {"name":"username", "label": "Username", "type": "text", "value": ""},
+        {"name":"password", "label": "Password", "type": "text", "value": ""},
+        {"name":"household", "label": "Household", "type": "text", "value": ""},
+        {"name":"submit", "label": "", "type": "submit", "value": "Sign up"}
+    ],
+    "payment":[
+        {"name":"username", "label": "Username", "type": "text", "value": ""},
+        {"name":"amount", "label": "Amount", "type": "text", "value": ""},
+        {"name":"date", "label": "Date", "type": "date", "value": ""},
+        {"name":"", "label": "", "type": "submit", "value": "Submit"}    
+    ],
+    "groceries":[
+        {"name":"username", "label": "Username", "type": "text", "value": ""},
+        {"name":"item", "label": "Item", "type": "text", "value": ""},
+        {"name":"amount", "label": "Amount", "type": "text", "value": ""},
+        {"name":"location", "label": "Location", "type": "text", "value": ""},
+        {"name":"", "label": "", "type": "submit", "value": "Submit"}    
     ]
 }

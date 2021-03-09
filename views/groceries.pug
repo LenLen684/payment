@@ -12,7 +12,9 @@ block content
             each user in data
                 each item in user.groceries
                     tr
-                        th #{user.username}
-                        th #{item.item}
-                        th #{item.amount}
-                        th #{item.location}
+                        th= user.username
+                        th= item.item
+                        th= item.amount
+                        th= item.location
+    a(href="/shop/add") Add an item
+        

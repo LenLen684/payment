@@ -16,9 +16,28 @@ body{
     text-align: center;
     overflow: hidden;
 }
+nav{
+    display: flex;
+    width: 100%;
+    min-height: 10%;
+    max-height: 13%;
+    background-color: #d1d1d188;
+}
 .tabs{
     width: 100%;
-    margin: 0px;
+    padding: 20px 0;
     text-align: center;
     text-decoration: none;
+    vertical-align: middle;
 }
+.navicons{
+    height: auto;
+    width: auto;
+    min-height: 20px;
+    min-width: 20px;
+    max-height: 90%;
+    max-width: 90%;
+    vertical-align: middle;
+}
+
+/* Table stuff */
