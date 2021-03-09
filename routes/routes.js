@@ -1,7 +1,7 @@
 const config = require('../config')
 const api = require('./api');
 const util = require('./utils');
-let data = util.getAllData();
+//let data = util.getAllData();
 
 // -----Gets-----
 const index = (req, res) => {
@@ -14,7 +14,7 @@ const payment = (req, res) => {
     res.render('payment', {
         title: 'Payment Record',
         config,
-        data,
+        data: util.getAllData(),
     });
 }
 
@@ -32,7 +32,7 @@ const groceries = (req, res) => {
     res.render('groceries', {
         title: 'Grocery List',
         config,
-        data,
+        data: util.getAllData(),
     });
 }
 
@@ -59,6 +59,8 @@ const loginForm = (req,res) =>{
 
 const logout = (req,res) => { //logging out
     req.session.destroy
+    res.redirect('/');
+    return
 }
 
 // -----Posts-----
@@ -84,7 +86,18 @@ const loggedin = (req, res) =>{
     }
     //Now do the rest of the login stuff
     
-    
+    //Password check
+    passcheck = util.verifyPassword(username, password)
+    if(!passcheck){
+        console.log("Password incorrect")
+        res.redirect('/login');
+        return
+    }
+    //session creation
+    req.session.user = {
+        "username": username,
+        // "household": household
+    }
     res.redirect('/');
     return
 }
@@ -138,5 +151,6 @@ module.exports = {
     groceryForm,
     addPayment,
     addGroceries,
-    loggedin
+    loggedin,
+    logout,
 }

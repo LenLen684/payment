@@ -40,6 +40,7 @@ app.get('/pay/add', routes.payForm);
 app.get('/shop', routes.groceries);
 app.get('/shop/add', routes.groceryForm);
 app.get('/login', routes.loginForm);
+app.get('/logout', routes.logout)
 
 app.post('/',urlEncodedParser, routes.loggedin)
 app.post('/pay',urlEncodedParser, routes.addPayment)

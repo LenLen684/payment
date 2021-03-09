@@ -1,9 +1,9 @@
 {
     "menu": [
-        {"title": "Home", "link": "/", "icon":"/home.png"},
-        {"title": "Payment Record", "link": "/pay", "icon" : "/pay.png"},
-        {"title":"Grocery List", "link": "/shop", "icon" : "/shop.png"},
-        {"title":"Login or sign up", "link": "/login", "icon" : "/login.png"}
+        {"title": "Home", "link": "/","id":"home", "icon":"/home.png"},
+        {"title": "Payment Record","id":"pay", "link": "/pay", "icon" : "/pay.png"},
+        {"title":"Grocery List","id":"shop" ,"link": "/shop", "icon" : "/shop.png"},
+        {"title":"Login or sign up","id":"user", "link": "/login", "icon" : "/login.png"}
     ],
     "login":[
         {"name":"username", "label": "Username", "type": "text", "value": ""},
