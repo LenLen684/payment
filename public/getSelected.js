@@ -4,15 +4,15 @@ let items = [];
 
 
 // -----Support-----
-const addUser = (username){
-    
+const addUser = (username) => {
+    items.push({username: []})
 }
 
-const addItemToUser = (username, item, amount, location) =>{
+const addItemToUser = (username, item, amount, location) => {
     item = {
         "item": "Fizzy Drinks",
         "amount": 8,
         "location": "Walmart"
     }
-    items.username.push({"username":username,"item":item})
+    items.username.push(item)
 }
