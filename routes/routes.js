@@ -1,3 +1,4 @@
+const session = require('express-session');
 const config = require('../config')
 const api = require('./api');
 const util = require('./utils');
@@ -7,21 +8,26 @@ const util = require('./utils');
 const index = (req, res) => {
     res.render('index', {
         title: 'Pay Check',
-        config
+        menu : menuData(req),
     });
 }
+
 const payment = (req, res) => {
     res.render('payment', {
         title: 'Payment Record',
-        config,
+        menu : menuData(req),
         data: util.getAllData(),
     });
 }
 
 const payForm = (req, res) =>{
+    if(!sessionExists(req)){
+        res.redirect('/login')
+        return;
+    }
     res.render('form', {
         title: "Add Payment Record",
-        config,
+        menu : menuData(req),
         header:"Add Record",
         data: config.payment,
         action: "/pay",
@@ -31,15 +37,19 @@ const payForm = (req, res) =>{
 const groceries = (req, res) => {
     res.render('groceries', {
         title: 'Grocery List',
-        config,
+        menu : menuData(req),
         data: util.getAllData(),
     });
 }
 
 const groceryForm = (req, res) =>{
+    if(!sessionExists(req)){
+        res.redirect('/login')
+        return;
+    }
     res.render('form', {
         title: "Add Grocery Item",
-        config,
+        menu : menuData(req),
         header: "Add Item",
         data: config.groceries,
         action: "/shop",
@@ -48,7 +58,7 @@ const groceryForm = (req, res) =>{
 const loginForm = (req,res) =>{
     res.render('form',{
         title: 'Login or Sign Up',
-        config,
+        menu : menuData(req),
         header:"Log in",
         data: config.login,
         header2:"Sign up",
@@ -58,7 +68,7 @@ const loginForm = (req,res) =>{
 }
 
 const logout = (req,res) => { //logging out
-    req.session.destroy
+    req.session.destroy()
     res.redirect('/');
     return
 }
@@ -103,7 +113,11 @@ const loggedin = (req, res) =>{
 }
 
 const addPayment = (req, res) =>{
-    username = req.body.username
+    if(!sessionExists(req)){
+        res.redirect('/login');
+        return;
+    }
+    username = req.session.user.username
     amount = req.body.amount
     date = req.body.date.split("-")
 
@@ -118,7 +132,11 @@ const addPayment = (req, res) =>{
 }
 
 const addGroceries = (req, res) =>{
-    username = req.body.username;
+    if(!sessionExists(req)){
+        res.redirect('/login')
+        return;
+    }
+    username = req.session.user.username;
     item = req.body.item;
     amount = req.body.amount;
     location = req.body.location;
@@ -139,6 +157,24 @@ const addGroceries = (req, res) =>{
     user.groceries.push({"item":item, "amount":amount, "location":location});
     util.editUserData(user);
     res.redirect('/shop');
+}
+
+
+// -----Support-----
+const menuData = (req) =>{
+    if(sessionExists(req)){
+        return config.menu_logged
+    }else{
+        return config.menu
+    }
+}
+
+const sessionExists = (req) =>{
+    if(req.session.user){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 module.exports = {

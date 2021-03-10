@@ -8,8 +8,12 @@ html
         link(rel="manifest" href="/site.webmanifest")
     body
         nav
-            each item in config.menu
+            each item in menu
                 a(class="tabs" href=item.link id=item.id)
                     img(src=item.icon class="navicons")
                     |#{item.title}
-        block content 
+        main
+            block content 
+
+            //- footer 	&copy; L.Lefiti
+                

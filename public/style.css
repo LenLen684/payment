@@ -1,27 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat&display=swap');
 body{
     margin: 0;
     background-color:  	#435274;
-    color: #d8ebf6;
-    font-family: 'Montserrat', sans-serif;
+    color: #d5dfe7;
+    font-family: "Comfortaa", sans-serif;
     height: 100%;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #sitename{
     font-family: "Comfortaa", sans-serif;
+    font-weight: 100;
     font-size: 200pt;
     background: linear-gradient(#76F2ED, #83C5F7);
-    background-clip: border-box;
+    /* background-clip: border-box; */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
     overflow: hidden;
 }
+
+
+.btns{
+    flex-direction: row;
+    height: 20vh;
+    width: auto;
+    margin-top: 5%;
+}
+
+a{
+    text-decoration: none;
+    font-size: 2vmax;
+    color:#d2e0e0;
+}
+.link{
+    background-color: #0f2950e7;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+
+}
+.link:hover{
+    background-color: #0f29507e;
+    
+}
+
+/* Nav Items */
+
 nav{
     display: flex;
     width: 100%;
-    min-height: 10%;
     max-height: 13%;
+    min-height: 60px;
     background-color: #d1d1d188;
+    overflow: hidden;
 }
 .tabs{
     width: 100%;
@@ -29,15 +65,64 @@ nav{
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
+    color: #2b3236;
+    font-size: 1.9vmax;
+    transition: all ease-in-out 500ms;
+}
+.tabs:hover{
+    background-color:#d1d1d1d1;
 }
 .navicons{
-    height: auto;
-    width: auto;
-    min-height: 20px;
-    min-width: 20px;
+    min-height: 3vmax;
+    min-width: 3vmax;
     max-height: 90%;
-    max-width: 90%;
+    max-width: 90%; 
+    height: 4vmax;
     vertical-align: middle;
 }
 
 /* Table stuff */
+
+table{
+    margin-top: 2%;
+    border-radius: 5px;
+    font-size: 2vmax;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    min-width: 70%;
+    max-width: 85%;
+    /* white-space: nowrap; */
+    background-color: #8a8a8a8a;
+}
+
+ td,  th {
+    text-align: center;
+    padding: 8px;
+}
+
+ td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 2vmax;
+}
+
+ thead th {
+    color: #ffffff;
+    background: #324960;
+}
+
+
+thead th:nth-child(even) {
+    color: #ffffff;
+    background: #3e5985;
+}
+
+ tr:nth-child(even) {
+    background: #8a8a8a5e;
+}
+
+/* Responsive */
+
+/* @media (max-width: 767px) {
+    
+} */

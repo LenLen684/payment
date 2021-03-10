@@ -7,26 +7,30 @@
     ],
     "login":[
         {"name":"username", "label": "Username", "type": "text", "value": ""},
-        {"name":"password", "label": "Password", "type": "text", "value": ""},
+        {"name":"password", "label": "Password", "type": "password", "value": ""},
         {"name":"submit", "label": "", "type": "submit", "value": "Login"}
     ],
     "signup":[
         {"name":"username", "label": "Username", "type": "text", "value": ""},
-        {"name":"password", "label": "Password", "type": "text", "value": ""},
+        {"name":"password", "label": "Password", "type": "password", "value": ""},
         {"name":"household", "label": "Household", "type": "text", "value": ""},
         {"name":"submit", "label": "", "type": "submit", "value": "Sign up"}
     ],
     "payment":[
-        {"name":"username", "label": "Username", "type": "text", "value": ""},
         {"name":"amount", "label": "Amount", "type": "text", "value": ""},
         {"name":"date", "label": "Date", "type": "date", "value": ""},
         {"name":"", "label": "", "type": "submit", "value": "Submit"}    
     ],
     "groceries":[
-        {"name":"username", "label": "Username", "type": "text", "value": ""},
         {"name":"item", "label": "Item", "type": "text", "value": ""},
         {"name":"amount", "label": "Amount", "type": "text", "value": ""},
         {"name":"location", "label": "Location", "type": "text", "value": ""},
         {"name":"", "label": "", "type": "submit", "value": "Submit"}    
+    ],
+    "menu_logged": [
+        {"title": "Home", "link": "/","id":"home", "icon":"/home.png"},
+        {"title": "Payment Record","id":"pay", "link": "/pay", "icon" : "/pay.png"},
+        {"title":"Grocery List","id":"shop" ,"link": "/shop", "icon" : "/shop.png"},
+        {"title":"Logout","id":"user", "link": "/logout", "icon" : "/login.png"}
     ]
 }

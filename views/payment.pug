@@ -1,6 +1,7 @@
 extends layout  
 
 block content
+    h1(class="tabletop") Payment Records
     table
         thead
             tr
@@ -14,4 +15,4 @@ block content
                         th #{user.username}
                         th #{item.amount}
                         th #{item.date.month+"/"+item.date.day+"/"+item.date.year}
-    a(href="/pay/add") Add a payment record
+    a(href="/pay/add" class="link") Add payment record
