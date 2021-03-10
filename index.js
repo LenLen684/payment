@@ -46,7 +46,7 @@ app.post('/',urlEncodedParser, routes.loggedin)
 app.post('/pay',urlEncodedParser, routes.addPayment)
 app.post('/shop',urlEncodedParser,routes.addGroceries)
 
-app.listen(hostname, () =>{
-    console.log(`payment running at http://${hostname}`);
+app.listen(port, () =>{
+    console.log(`payment running at http://${port}`);
 });
 "test"
