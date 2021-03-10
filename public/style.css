@@ -38,14 +38,14 @@ a{
     color:#d2e0e0;
 }
 .link{
-    background-color: #0f2950e7;
+    background-color: #00000073;
     border-radius: 5px;
     margin: 10px;
     padding: 20px;
 
 }
 .link:hover{
-    background-color: #0f29507e;
+    background-color: #0000003f;
     
 }
 
@@ -108,7 +108,7 @@ table{
 
  thead th {
     color: #ffffff;
-    background: #324960;
+    background: #3d5f85d8;
 }
 
 
@@ -119,6 +119,32 @@ thead th:nth-child(even) {
 
  tr:nth-child(even) {
     background: #8a8a8a5e;
+}
+
+
+/* Form stuff */
+
+input{
+    margin-bottom:20px;
+    border-radius:5px;
+    background:#F6F7F9;
+    border:none;
+    padding:0px 10px;
+    width:100%;
+    line-height:40px;
+    height:40px;
+    outline:none;
+}
+ 
+input[type=submit]{
+    background:#00000073;
+    color:#F6F7F9;
+    height:40px;
+    line-height:40px;
+    width:100%;
+    border:none;
+    border-radius:4px;
+    font-weight:700;
 }
 
 /* Responsive */
