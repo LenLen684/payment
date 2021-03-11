@@ -124,7 +124,7 @@ thead th:nth-child(even) {
 
 /* Form stuff */
 
-input{
+input[type=text], input[type=password], input[type=date]{
     margin-bottom:20px;
     border-radius:5px;
     background:#F6F7F9;
@@ -134,6 +134,7 @@ input{
     line-height:40px;
     height:40px;
     outline:none;
+    font-size: 1.5vmax;
 }
  
 input[type=submit]{
@@ -145,6 +146,21 @@ input[type=submit]{
     border:none;
     border-radius:4px;
     font-weight:700;
+}
+
+/* Checkboxes */
+
+input[type=checkbox]{
+    /* opacity: 0; */
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+}
+.checkmark {
+    height: 50px;
+    width: 50px;
+    background-color: #eee;
 }
 
 /* Responsive */

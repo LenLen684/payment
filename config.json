@@ -17,13 +17,13 @@
         {"name":"submit", "label": "", "type": "submit", "value": "Sign up"}
     ],
     "payment":[
-        {"name":"amount", "label": "Amount", "type": "text", "value": ""},
+        {"name":"amount", "label": "Amount Paid", "type": "text", "value": ""},
         {"name":"date", "label": "Date", "type": "date", "value": ""},
         {"name":"", "label": "", "type": "submit", "value": "Submit"}    
     ],
     "groceries":[
         {"name":"item", "label": "Item", "type": "text", "value": ""},
-        {"name":"amount", "label": "Amount", "type": "text", "value": ""},
+        {"name":"amount", "label": "Amount of items", "type": "text", "value": ""},
         {"name":"location", "label": "Location", "type": "text", "value": ""},
         {"name":"", "label": "", "type": "submit", "value": "Submit"}    
     ],
