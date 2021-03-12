@@ -45,6 +45,7 @@ app.get('/logout', routes.logout)
 app.post('/',urlEncodedParser, routes.loggedin)
 app.post('/pay',urlEncodedParser, routes.addPayment)
 app.post('/shop',urlEncodedParser,routes.addGroceries)
+app.post('/shop/delete', urlEncodedParser, routes.deleteGrocery)
 
 app.listen(port, hostname, () =>{
     console.log(`payment running at http://${hostname}:${port}`);

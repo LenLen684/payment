@@ -1,12 +1,13 @@
 extends layout  
 
 block content
-    //- script(src="../getSelected.js")
+    
     h1(id="tabletop") Grocery List
-    table
+    
+    table(id="shopTable")
         thead
             tr
-                //- th
+                th
                 th Username
                 th Item
                 th Amount
@@ -15,13 +16,17 @@ block content
             each user in data
                 each item in user.groceries
                     tr
-                        //- th
-                        //-     input(type="checkbox")
+                        th
+                            input(type="checkbox" value=item)
                         th= user.username
                         th= item.item
                         th= item.amount
                         th= item.location
-    //- div(class="btns")
-    a(href="/shop/add" class="link") Add item
-        //- a(href="" class="link") Delete Selected
+    div(class="btns")
+        a(href="/shop/add" class="link") Add item
+        form(method="post" action="/shop/delete" class="hiddenform")
+            input(type="hidden" id="hiddendata" name="hiddendata" value="")
+            input(class="link" type="submit" value="Delete Selected" onsubmit="getChecked()") 
+
+    script(src="../getSelected.js")
         

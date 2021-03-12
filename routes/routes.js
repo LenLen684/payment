@@ -1,3 +1,4 @@
+const { json } = require('body-parser');
 const session = require('express-session');
 const config = require('../config')
 const api = require('./api');
@@ -159,8 +160,17 @@ const addGroceries = (req, res) =>{
     res.redirect('/shop');
 }
 
+const deleteGrocery = (req, res) =>{
+    let jsondata = JSON.parse(req.body.hiddendata);
+    for(let i = 0; i < jsondata.length; i++){
+        util.deleteItems(jsondata[i].username, jsondata[i].items);
+    }
+    res.redirect("/shop")
+    return;
+}
 
 // -----Support-----
+
 const menuData = (req) =>{
     if(sessionExists(req)){
         return config.menu_logged
@@ -187,6 +197,7 @@ module.exports = {
     groceryForm,
     addPayment,
     addGroceries,
+    deleteGrocery,
     loggedin,
     logout,
 }
