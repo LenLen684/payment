@@ -69,8 +69,10 @@ const deleteItems = (username, items) =>{
     let data = getAllData();
     let index = getUserIndex(username);
     let groceries = data[index].groceries;
-    for(let i = 0; i < items.length; i++){
-        for(let j = 0; j < groceries.length; j++){
+    console.log(items)
+    for(let j = 0; j < groceries.length; j++){
+        for(let i = 0; i < items.length; i++){
+        console.log("items: ", items[i])
             if(groceries[j].item == items[i].item && groceries[j].amount == items[i].amount && groceries[j].location == items[i].location){
                 console.log("deleting at:", i);
                 delete groceries[j]
