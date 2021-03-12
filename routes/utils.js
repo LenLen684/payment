@@ -1,7 +1,6 @@
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const { get } = require('http');
-const { groceryForm } = require('./routes');
 const DB = './data.json';
 
 // return all data
@@ -66,19 +65,21 @@ const removeUserData = username => {
 
 // delete items from user
 const deleteItems = (username, items) =>{
+    console.log("Got to deleteItems")
     let data = getAllData();
     let index = getUserIndex(username);
     let groceries = data[index].groceries;
-    for(let i = 0; i < items; i++){
-        for(let j = 0; j < groceries; j++){
-            if(groceries[j] == items[i]){
+    for(let i = 0; i < items.length; i++){
+        for(let j = 0; j < groceries.length; j++){
+            if(groceries[j].item == items[i].item && groceries[j].amount == items[i].amount && groceries[j].location == items[i].location){
                 console.log("deleting at:", i);
                 delete groceries[j]
                 break;
             }
         }
     }
-    data.groceries = groceries;
+
+    data[index].groceries = groceries.filter(groceries=>groceries != null);
     writeAllData(data.filter(data=>data != null));
 }
 

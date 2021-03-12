@@ -1,7 +1,9 @@
 let items = [];
 var hiddendata = document.getElementById("hiddendata");
 
+hiddendata.value = ""
 const getChecked = () =>{
+    // items = []
     table = document.getElementsByTagName("tbody");
     for(let i=0; i < table[0].rows.length; i++){
         tr = table[0].rows[i].cells
@@ -30,14 +32,14 @@ const addUser = (username) => {
 }
 
 const addItemToUser = (username, item, amount, location) => {
-    data = {
+    let data = {
         "item": item,
         "amount": amount,
         "location": location
     }
-    i = getUserIndex(username);
-    console.log("Items:", items)
-    items[i].items.push(data)
+    let i = getUserIndex(username);
+    console.log("Items:", items);
+    items[i].items.push(data);
 }
 
 const getUserIndex = (username) =>{

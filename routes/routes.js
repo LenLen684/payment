@@ -163,6 +163,7 @@ const addGroceries = (req, res) =>{
 const deleteGrocery = (req, res) =>{
     let jsondata = JSON.parse(req.body.hiddendata);
     for(let i = 0; i < jsondata.length; i++){
+        // console.log(jsondata[i].username);
         util.deleteItems(jsondata[i].username, jsondata[i].items);
     }
     res.redirect("/shop")

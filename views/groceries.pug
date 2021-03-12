@@ -24,9 +24,9 @@ block content
                         th= item.location
     div(class="btns")
         a(href="/shop/add" class="link") Add item
-        form(method="post" action="/shop/delete" class="hiddenform")
+        form(method="post" action="/shop/delete" class="hiddenform" onsubmit="return getChecked()")
             input(type="hidden" id="hiddendata" name="hiddendata" value="")
-            input(class="link" type="submit" value="Delete Selected" onsubmit="getChecked()") 
+            input(class="link" type="submit" value="Delete Selected") 
 
     script(src="../getSelected.js")
         
