@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1= header
-    form(method="post" action=action)
+    form(method="post" action=action class="form")
         each item in data
             label= item.label
             input(type=item.type name=item.name value=item.value)

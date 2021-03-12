@@ -1,5 +1,6 @@
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
+const { get } = require('http');
 const DB = './data.json';
 
 // return all data
@@ -62,6 +63,38 @@ const removeUserData = username => {
     writeAllData(data.filter(data=>data != null));
 }
 
+// delete items from user
+const deleteItems = (username, items) =>{
+    console.log("Got to deleteItems")
+    let data = getAllData();
+    let index = getUserIndex(username);
+    let groceries = data[index].groceries;
+    console.log(items)
+    for(let j = 0; j < groceries.length; j++){
+        for(let i = 0; i < items.length; i++){
+        console.log("items: ", items[i])
+            if(groceries[j].item == items[i].item && groceries[j].amount == items[i].amount && groceries[j].location == items[i].location){
+                console.log("deleting at:", i);
+                delete groceries[j]
+                break;
+            }
+        }
+    }
+
+    data[index].groceries = groceries.filter(groceries=>groceries != null);
+    writeAllData(data.filter(data=>data != null));
+}
+
+// get index from file
+const getUserIndex = (username) =>{
+    let data = getAllData();
+    for(let i = 0; i < data.length; i++) {
+        if(data[i].username == username) {
+            return i;
+        }
+    }
+}
+
 // add user to the data file
 const addUser = user => {
     let data = getAllData();
@@ -108,5 +141,6 @@ module.exports = {
     addUser,
     editUserData,
     writeAllData,
-    createUser
+    createUser,
+    deleteItems
 }

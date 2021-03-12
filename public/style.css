@@ -42,12 +42,22 @@ a{
     border-radius: 5px;
     margin: 10px;
     padding: 20px;
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 2vmax;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
 
 }
 .link:hover{
     background-color: #0000003f;
     
 }
+
 
 /* Nav Items */
 
@@ -124,6 +134,10 @@ thead th:nth-child(even) {
 
 /* Form stuff */
 
+.hiddenform{
+    display: inline;
+}
+
 input[type=text], input[type=password], input[type=date]{
     margin-bottom:20px;
     border-radius:5px;
@@ -137,7 +151,7 @@ input[type=text], input[type=password], input[type=date]{
     font-size: 1.5vmax;
 }
  
-input[type=submit]{
+input[type=submit]:not(.link){
     background:#00000073;
     color:#F6F7F9;
     height:40px;
@@ -153,15 +167,13 @@ input[type=submit]{
 input[type=checkbox]{
     /* opacity: 0; */
     cursor: pointer;
-    height: 0;
-    width: 0;
-
 }
+/* 
 .checkmark {
     height: 50px;
     width: 50px;
     background-color: #eee;
-}
+} */
 
 /* Responsive */
 
